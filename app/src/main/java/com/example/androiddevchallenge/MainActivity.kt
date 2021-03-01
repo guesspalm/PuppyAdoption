@@ -30,6 +30,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,9 +45,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 
 val puppies: List<Puppy> = listOf(
     Puppy(
@@ -113,7 +113,8 @@ fun PuppyItem(context: Context?, puppy: Puppy) {
                 val intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra("puppy", puppy)
                 context?.startActivity(intent)
-            }, contentAlignment = Alignment.BottomCenter
+            },
+        contentAlignment = Alignment.BottomCenter
     ) {
         Image(
             modifier = Modifier.fillMaxSize(),
@@ -136,7 +137,6 @@ fun PuppyItem(context: Context?, puppy: Puppy) {
                 )
             )
         }
-
     }
 }
 

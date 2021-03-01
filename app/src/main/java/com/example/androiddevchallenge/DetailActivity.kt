@@ -48,19 +48,26 @@ class DetailActivity : AppCompatActivity() {
         val puppy = intent.getParcelableExtra<Puppy>("puppy")
         setContent {
             MyTheme {
-                Scaffold(topBar = {
-                    TopAppBar(title = { Text("Detail") }, navigationIcon = {
-                        Button(onClick = {
-                            onBackPressed()
-                        }) {
-                            Image(
-                                painter = painterResource(R.drawable.icon_back),
-                                contentDescription = "back",
-                                colorFilter = ColorFilter.tint(Color.White)
-                            )
-                        }
-                    })
-                }) {
+                Scaffold(
+                    topBar = {
+                        TopAppBar(
+                            title = { Text("Detail") },
+                            navigationIcon = {
+                                Button(
+                                    onClick = {
+                                        onBackPressed()
+                                    }
+                                ) {
+                                    Image(
+                                        painter = painterResource(R.drawable.icon_back),
+                                        contentDescription = "back",
+                                        colorFilter = ColorFilter.tint(Color.White)
+                                    )
+                                }
+                            }
+                        )
+                    }
+                ) {
                     if (puppy != null) {
                         Box(
                             modifier = Modifier.fillMaxSize(),
@@ -89,12 +96,9 @@ class DetailActivity : AppCompatActivity() {
                                         lineHeight = 16.sp,
                                     )
                                 )
-
                             }
-
                         }
                     }
-
                 }
             }
         }
