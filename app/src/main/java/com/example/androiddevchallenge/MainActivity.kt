@@ -106,13 +106,15 @@ fun MyApp(context: Context?) {
 
 @Composable
 fun PuppyItem(context: Context?, puppy: Puppy) {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .clickable {
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("puppy", puppy)
-            context?.startActivity(intent)
-        }, contentAlignment = Alignment.BottomCenter) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .clickable {
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("puppy", puppy)
+                context?.startActivity(intent)
+            }, contentAlignment = Alignment.BottomCenter
+    ) {
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = puppy.res),
@@ -136,9 +138,7 @@ fun PuppyItem(context: Context?, puppy: Puppy) {
         }
 
     }
-
 }
-
 
 @ExperimentalFoundationApi
 @Preview("Light Theme", widthDp = 360, heightDp = 640)

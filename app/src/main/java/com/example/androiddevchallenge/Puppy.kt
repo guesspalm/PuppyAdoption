@@ -18,7 +18,6 @@ package com.example.androiddevchallenge
 import android.os.Parcel
 import android.os.Parcelable
 
-
 class Puppy(
     var res: Int,
     var name: String?,
@@ -57,5 +56,4 @@ class Puppy(
             return arrayOfNulls(size)
         }
     }
-
 }

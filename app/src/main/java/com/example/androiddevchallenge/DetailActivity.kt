@@ -65,7 +65,7 @@ class DetailActivity : AppCompatActivity() {
                         Box(
                             modifier = Modifier.fillMaxSize(),
                         ) {
-                            Column( modifier = Modifier.verticalScroll(rememberScrollState()) ) {
+                            Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                                 Image(
                                     modifier = Modifier.fillMaxSize(),
                                     painter = painterResource(id = puppy.res),
@@ -82,7 +82,7 @@ class DetailActivity : AppCompatActivity() {
                                 )
                                 Text(
                                     modifier = Modifier.padding(8.dp),
-                                    text = puppy.desc ?: "" ,
+                                    text = puppy.desc ?: "",
                                     style = TextStyle(
                                         fontWeight = FontWeight.Normal,
                                         fontSize = 14.sp,
